@@ -1,0 +1,102 @@
+<lccdd>
+
+    <comment>Tracking detectors</comment>
+    <detectors>
+        <detector name="FMT" type="DD4hep_SubdetectorAssembly" vis="FMTVis">
+            <shape type="Tube" rmin="FMT_inner_radius+env_safety" rmax="FMT_outer_radius" dz="FMT_half_length" material="Air"/>
+            <comment>FMT Assembly</comment>
+            <composite name="FMTEndcap"/>
+        </detector>
+    </detectors>
+
+    <display>
+        <vis name="SiFMTModuleVis"    alpha="1.0" r="1" g="1"    b="0.6"     showDaughters="true"  visible="false"/>
+        <vis name="SiFMTSensitiveVis" alpha="1.0" r="1" g="0.2"  b="0.2"     showDaughters="true"  visible="true"/>
+        <vis name="SiFMTPassiveVis"   alpha="1.0" r="0.274" g="0.274"  b="0.274"       showDaughters="true"  visible="true"/>
+        <vis name="SiFMTCableVis"     alpha="1.0" r="0.85" g="0.53"    b="0.4"       showDaughters="true"  visible="true"/>
+        <vis name="SiFMTAir"          alpha="1.0" r="0" g="0"    b="0"       showDaughters="false"  visible="false"/>
+    </display>
+
+    <define>
+        <constant name="FMTEndcap_offset" value="3*mm"/>
+        <constant name="FMTEndcap_rmax"   value="FMT_outer_radius - FMTEndcap_offset"/>
+        <constant name="FMTEndcap_zmin"   value="700*cm"/>
+        <constant name="FMTEndcap_zmax"   value="800*cm"/>
+        <constant name="FMTEndcap_z1"     value="700*cm"/>
+        <constant name="FMTEndcap_z2"     value="750*cm"/>
+        <constant name="FMTEndcap_z3"     value="800*cm"/>
+        <constant name="FMTEndcapModules" value="16"/>
+        <constant name="FMTEndcap_rmin1"  value="0*mm"/>
+        <constant name="FMTEndcap_rmin2"  value="0*mm"/>
+        <constant name="FMTEndcap_rmin3"  value="0*mm"/>
+        <constant name="FMTEndcapOverlap" value="1*mm"/>
+
+        <constant name="FMTEndcap_Sensitive_Thickness"   value="50e-3*mm"/>
+        <constant name="FMTEndcap_Support_Thickness"     value="280e-3*mm"/> <!-- +50% more material budget as in CLIC VTX -->
+        <constant name="FMTEndcapModuleThickness" value="FMTEndcap_Sensitive_Thickness + FMTEndcap_Support_Thickness"/>
+    </define>
+
+
+    <!--  Definition of the readout segmentation/definition  -->
+    <readouts>
+        <readout name="FMTEndcapCollection">
+            <id>${GlobalTrackerReadoutID}</id>
+        </readout>
+    </readouts>
+
+    <detectors>
+        <detector id="DetID_FMT" name="FMTEndcap" type="VertexEndcap_o1_v06" readout="FMTEndcapCollection" reflect="true" region="FMTEndcapRegion">
+            <envelope vis="VXDVis">
+                <shape type="Assembly"/>
+            </envelope>
+            <comment>FMT Detector Endcaps</comment>
+
+            <type_flags type=" DetType_TRACKER + DetType_PIXEL + DetType_FMT + DetType_ENDCAP"/>
+
+            <module name="SiFMTEndcapModule1_0" vis="SiFMTModuleVis">
+                <trd x1="FMTEndcap_rmin1 * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" x2="FMTEndcap_rmax * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" z="(FMTEndcap_rmax - FMTEndcap_rmin1)/2" />
+                <module_component thickness="FMTEndcap_Support_Thickness"  material="Silicon" vis="SiFMTPassiveVis"/>
+                <module_component thickness="FMTEndcap_Sensitive_Thickness"  material="Silicon" sensitive="true" vis="SiFMTSensitiveVis"/>
+                <!-- <module_component thickness="FMTEndcap_DoubleLayer_Gap/2"  material="Air" vis="SiFMTAir" /> -->
+            </module>
+
+            <module name="SiFMTEndcapModule2_0" vis="SiFMTModuleVis">
+                <trd x1="FMTEndcap_rmin2 * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" x2="FMTEndcap_rmax * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" z="(FMTEndcap_rmax - FMTEndcap_rmin2)/2" />
+                <module_component thickness="FMTEndcap_Support_Thickness"  material="Silicon" vis="SiFMTPassiveVis"/>
+                <module_component thickness="FMTEndcap_Sensitive_Thickness"  material="Silicon" sensitive="true" vis="SiFMTSensitiveVis"/>
+                <!-- <module_component thickness="FMTEndcap_DoubleLayer_Gap/2"  material="Air" vis="SiFMTAir" /> -->
+            </module>
+
+            <module name="SiFMTEndcapModule3_0" vis="SiFMTModuleVis">
+                <trd x1="FMTEndcap_rmin3 * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" x2="FMTEndcap_rmax * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" z="(FMTEndcap_rmax - FMTEndcap_rmin3)/2" />
+                <module_component thickness="FMTEndcap_Support_Thickness"  material="Silicon" vis="SiFMTPassiveVis"/>
+                <module_component thickness="FMTEndcap_Sensitive_Thickness"  material="Silicon" sensitive="true" vis="SiFMTSensitiveVis"/>
+                <!-- <module_component thickness="FMTEndcap_DoubleLayer_Gap/2"  material="Air" vis="SiFMTAir" /> -->
+            </module>
+
+            <layer id="0"  vis="SiFMTLayerVis">
+                <ring r="(FMTEndcap_rmax + FMTEndcap_rmin1)/2" zstart="FMTEndcap_z1" nmodules="(int) FMTEndcapModules" dz="0" phi0="pi/(FMTEndcapModules)" module="SiFMTEndcapModule1_0"/>
+            </layer>
+            <layer id="1"  vis="SiFMTLayerVis">
+                <ring r="(FMTEndcap_rmax + FMTEndcap_rmin2)/2" zstart="FMTEndcap_z2" nmodules="(int) FMTEndcapModules" dz="0" phi0="pi/(FMTEndcapModules)" module="SiFMTEndcapModule2_0"/>
+            </layer>
+            <layer id="2"  vis="SiFMTLayerVis">
+                <ring r="(FMTEndcap_rmax + FMTEndcap_rmin3)/2" zstart="FMTEndcap_z3" nmodules="(int) FMTEndcapModules" dz="0" phi0="pi/(FMTEndcapModules)" module="SiFMTEndcapModule3_0"/>
+            </layer>
+
+        </detector>
+
+    </detectors>
+
+
+    <plugins>
+        <plugin name="DD4hep_GenericSurfaceInstallerPlugin">
+            <argument value="FMTEndcap"/>
+            <argument value="dimension=2"/>
+            <argument value="u_x=-1."/>
+            <argument value="v_z=1."/>
+            <argument value="n_y=1."/>
+        </plugin>
+    </plugins>
+
+</lccdd>
