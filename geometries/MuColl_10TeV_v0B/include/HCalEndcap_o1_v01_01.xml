@@ -22,8 +22,8 @@
 					</shape>
 					<shape type="Polycone" startphi="0" deltaphi="2.0*pi*rad">
 						<zplane z="-HCalEndcap_max_z-env_safety" rmin="0" rmax="HCalEndcap_inner_radius2"/>
-						<zplane z="-HCalEndcap_min_z"            rmin="0" rmax="HCalEndcap_inner_radius"/>
-						<zplane z="HCalEndcap_min_z"             rmin="0" rmax="HCalEndcap_inner_radius"/>
+						<zplane z="-HCalEndcap_min_z-env_safety" rmin="0" rmax="HCalEndcap_inner_radius"/>
+						<zplane z="HCalEndcap_min_z+env_safety" rmin="0" rmax="HCalEndcap_inner_radius"/>
 						<zplane z="HCalEndcap_max_z+env_safety"  rmin="0" rmax="HCalEndcap_inner_radius2"/>
 					</shape>
 				</shape>
@@ -51,7 +51,7 @@
 
 	<detectors>
 
-		<detector name="HCalEndcap" type="GenericCalEndcap_o2_v01" id="DetID_HCAL_Endcap" readout="HCalEndcapCollection" vis="HCALVis" >
+		<detector name="HCalEndcap" type="GenericCalEndcap_o1_v01" id="DetID_HCAL_Endcap" readout="HCalEndcapCollection" vis="HCALVis" >
 
 			<comment>Hadronic Calorimeter: Endcap</comment>
 

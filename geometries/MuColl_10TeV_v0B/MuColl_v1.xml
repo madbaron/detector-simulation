@@ -20,7 +20,7 @@
 	<include ref="include/ECalEndcap_o2_v01_02.xml"/>
 
 	<include ref="include/HCalBarrel_o1_v01_01.xml"/>
-	<include ref="include/HCalEndcap_o1_v01_01.xml"/>
+	<!-- include ref="include/HCalEndcap_o1_v01_01.xml"/ -->
 
 	<include ref="include/Solenoid_o1_v01_01.xml"/>
 
