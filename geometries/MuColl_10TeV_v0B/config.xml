@@ -78,8 +78,8 @@
 		<constant name="OuterTracker_outer_radius"  value="1500*mm - 0.1*mm"/>  <!-- to avoid overlap with CaloFace-->
 		<constant name="OuterTracker_half_length"   value="2306*mm"/>
 
-		<constant name="ECalBarrel_inner_radius"    value="1590*mm"/>
-		<constant name="ECalBarrel_outer_radius"    value="1850*mm"/>
+		<constant name="ECalBarrel_inner_radius"    value="1816*mm"/>
+		<constant name="ECalBarrel_outer_radius"    value="2076*mm"/>
 		<constant name="ECalBarrel_half_length"     value="2210*mm"/>
 		<constant name="ECalBarrel_symmetry"        value="12"/>
 
@@ -109,10 +109,10 @@
 		<constant name="HCalRing_min_z"             value="2353.5*mm"/>
 
 		<constant name="Solenoid_inner_radius"      value="1500*mm"/>
-		<constant name="Solenoid_outer_radius"      value="1590*mm - 0.1*mm"/>
-		<constant name="Solenoid_half_length"       value="4129*mm"/>
-		<constant name="Solenoid_Coil_half_length"  value="3900*mm"/>
-		<constant name="Solenoid_Coil_radius"       value="1545*mm"/>
+		<constant name="Solenoid_outer_radius"      value="1816*mm - 0.1*mm"/>
+		<constant name="Solenoid_half_length"       value="2300*mm"/>
+		<constant name="Solenoid_Coil_half_length"  value="2274*mm"/>
+		<constant name="Solenoid_Coil_radius"       value="1658*mm"/>
 
 		<constant name="YokeBarrel_inner_radius"    value="4461*mm"/>
 		<constant name="YokeBarrel_outer_radius"    value="6450*mm"/>

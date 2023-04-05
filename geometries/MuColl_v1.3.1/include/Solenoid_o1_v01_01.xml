@@ -1,8 +1,8 @@
 <lccdd>
 
 	<define>
-		<constant name="SolenoidVacuumTank_thickness" value="40*mm"/>
-		<constant name="SolenoidCoil_thickness" value="344*mm"/>
+		<constant name="SolenoidVacuumTank_thickness" value="26*mm"/>
+		<constant name="SolenoidCoil_thickness" value="265*mm"/>
 	</define>
 
 	<display>
