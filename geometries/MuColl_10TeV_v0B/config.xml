@@ -80,33 +80,33 @@
 
 		<constant name="ECalBarrel_inner_radius"    value="1816*mm"/>
 		<constant name="ECalBarrel_outer_radius"    value="2076*mm"/>
-		<constant name="ECalBarrel_half_length"     value="2210*mm"/>
+		<constant name="ECalBarrel_half_length"     value="2569*mm"/>
 		<constant name="ECalBarrel_symmetry"        value="12"/>
 
 		<constant name="ECalEndcap_inner_radius"    value="310*mm"/>
-		<constant name="ECalEndcap_outer_radius"    value="1700*mm"/>
+		<constant name="ECalEndcap_outer_radius"    value="1816*mm - 0.1*mm"/>
 		<constant name="ECalEndcap_min_z"           value="2307*mm"/>
 		<constant name="ECalEndcap_max_z"           value="2569*mm"/>
 		<constant name="ECalEndcap_outer_symmetry"  value="12"/>
 		<constant name="ECalEndcap_inner_symmetry"  value="12"/>
 
-		<constant name="HCalBarrel_inner_radius"    value="1852*mm"/>
-		<constant name="HCalBarrel_outer_radius"    value="3852*mm"/>
+		<constant name="HCalBarrel_inner_radius"    value="1818*mm"/>
+		<constant name="HCalBarrel_outer_radius"    value="3818*mm"/>
 		<constant name="HCalBarrel_half_length"     value="2569*mm"/>
 		<constant name="HCalBarrel_symmetry"        value="12"/>
 
 		<constant name="HCalEndcap_inner_steps"     value="5"/>
 		<constant name="HCalEndcap_inner_radius"    value="307*mm"/>
 		<constant name="HCalEndcap_inner_radius2"   value="445*mm"/>
-		<constant name="HCalEndcap_outer_radius"    value="3246*mm"/>
+		<constant name="HCalEndcap_outer_radius"    value="3818*mm"/>
 		<constant name="HCalEndcap_min_z"           value="2570*mm"/>
 		<constant name="HCalEndcap_max_z"           value="4570*mm"/>
 		<constant name="HCalEndcap_symmetry"        value="12"/>
 		<constant name="HCalEndcap_zcutout"         value="200*mm"/>
 
-		<constant name="HCalRing_inner_radius"      value="1898*mm"/>
+		<!-- constant name="HCalRing_inner_radius"      value="1898*mm"/>
 		<constant name="HCalRing_outer_radius"      value="HCalEndcap_outer_radius"/>
-		<constant name="HCalRing_min_z"             value="2353.5*mm"/>
+		<constant name="HCalRing_min_z"             value="2353.5*mm"/ -->
 
 		<constant name="Solenoid_inner_radius"      value="1500*mm"/>
 		<constant name="Solenoid_outer_radius"      value="1816*mm - 0.1*mm"/>

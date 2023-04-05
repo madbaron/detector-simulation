@@ -121,7 +121,7 @@
 
 
 
-	<detectors>
+	<!--detectors>
 
 		<detector name="HCalRing" type="GenericCalEndcap_o1_v01" id="DetID_HCAL_Ring" readout="HCalRingCollection" vis="HCALVis" >
 
@@ -149,7 +149,7 @@
 
 		</detector>
 
-	</detectors>
+	</detectors-->
 
 
 
