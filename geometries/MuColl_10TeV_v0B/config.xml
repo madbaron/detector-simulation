@@ -31,12 +31,12 @@
 
 		<constant name="DetID_HCAL_Barrel"    value="10"/>
 		<constant name="DetID_HCAL_Endcap"    value="11"/>
-		<constant name="DetID_HCAL_Ring"      value="12"/>
+		<!-- constant name="DetID_HCAL_Ring"      value="12"/ -->
 
-		<constant name="DetID_Yoke_Barrel"    value="13"/>
-		<constant name="DetID_Yoke_Endcap"    value="14"/>
+		<constant name="DetID_Yoke_Barrel"    value="12"/>
+		<constant name="DetID_Yoke_Endcap"    value="13"/>
 
-		<constant name="DetID_FMT"			  value="15"/>
+		<!-- constant name="DetID_FMT"			  value="14"/ -->
 
 		<!-- Envelope parameters -->
 		<comment> suggested naming convention:

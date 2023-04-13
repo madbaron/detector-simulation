@@ -1,7 +1,7 @@
 <lccdd>
 	<!--  Definition of global constants  -->
 	<define>
-		<constant name="HCalBarrel_layers" value="(int) 60"/>
+		<constant name="HCalBarrel_layers" value="(int) 75"/>
 		<constant name="HCalBarrel_layer_thickness" value="2.0*cm + 0.65*cm"/>
 	</define>
 
