@@ -114,16 +114,16 @@
 		<constant name="Solenoid_Coil_half_length"  value="2274*mm"/>
 		<constant name="Solenoid_Coil_radius"       value="1658*mm"/>
 
-		<constant name="YokeBarrel_inner_radius"    value="4461*mm"/>
-		<constant name="YokeBarrel_outer_radius"    value="6450*mm"/>
-		<constant name="YokeBarrel_half_length"     value="4179*mm"/>
+		<constant name="YokeBarrel_inner_radius"    value="3818*mm"/>
+		<constant name="YokeBarrel_outer_radius"    value="5777*mm"/>
+		<constant name="YokeBarrel_half_length"     value="4570*mm"/>
 		<constant name="YokeBarrel_symmetry"        value="12"/>
 
 		<constant name="YokeEndcap_inner_radius"    value="446*mm"/>
 		<constant name="YokeEndcap_inner_radius2"   value="575*mm"/>
-		<constant name="YokeEndcap_outer_radius"    value="6450*mm"/>
-		<constant name="YokeEndcap_min_z"           value="4179*mm"/>
-		<constant name="YokeEndcap_max_z"           value="5638*mm"/>
+		<constant name="YokeEndcap_outer_radius"    value="5777*mm"/>
+		<constant name="YokeEndcap_min_z"           value="4570*mm"/>
+		<constant name="YokeEndcap_max_z"           value="6529*mm"/>
 		<constant name="YokeEndcap_outer_symmetry"  value="12"/>
 
         <constant name="FMT_inner_radius"        value="3*mm"/>
@@ -162,15 +162,15 @@
 	</regions>
 
 	<display>
-		<vis name="VXDVis"     alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="true"  visible="false"/>
-		<vis name="ITVis"      alpha="1.0" r="0.54"  g="0.43"    b="0.04"  showDaughters="true"  visible="false"/>
-		<vis name="OTVis"      alpha="1.0" r="0.8"   g="0.8"     b="0.4"   showDaughters="true"  visible="false"/>
-		<vis name="ECALVis"    alpha="1.0" r="0.2"   g="0.6"     b="0"     showDaughters="true"  visible="true"/>
-		<vis name="HCALVis"    alpha="1.0" r="0.078" g="0.01176" b="0.588" showDaughters="true"  visible="true"/>
-		<vis name="SOLVis"     alpha="1.0" r="0.4"   g="0.4"     b="0.4"   showDaughters="true"  visible="true"/>
-		<vis name="YOKEVis"    alpha="1.0" r="0.6"   g="0.0"     b="0.0"   showDaughters="true"  visible="true"/>
-		<vis name="SupportVis" alpha="1"   r="0.2"   g="0.2"     b="0.2"   showDaughters="false" visible="true"/>
-        <vis name="FMTVis"      alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="true"  visible="false"/>
+		<vis name="VXDVis"     alpha="1.0" r="0.5"   g="0.48"    b="0.51"  showDaughters="true"  visible="false"/>
+		<vis name="ITVis"      alpha="1.0" r="0.5"   g="0.48"    b="0.51"  showDaughters="true"  visible="false"/>
+		<vis name="OTVis"      alpha="1.0" r="0.5"   g="0.48"    b="0.51"  showDaughters="true"  visible="false"/>
+		<vis name="ECALVis"    alpha="1.0" r="0.04"  g="0.21"    b="0.62"  showDaughters="true"  visible="true"/>
+		<vis name="HCALVis"    alpha="1.0" r="0.93"  g="0.62"    b="0.02"  showDaughters="true"  visible="true"/>
+		<vis name="SOLVis"     alpha="1.0" r="0.36"  g="0.78"    b="0.69"  showDaughters="true"  visible="true"/>
+		<vis name="YOKEVis"    alpha="1.0" r="0.88"  g="0.21"    b="0.09"  showDaughters="true"  visible="true"/>
+		<vis name="SupportVis" alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="false" visible="false"/>
+        <vis name="FMTVis"     alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="true"  visible="false"/>
 	</display>
 
 	<include ref="${DD4hepINSTALL}/DDDetectors/compact/detector_types.xml"/>

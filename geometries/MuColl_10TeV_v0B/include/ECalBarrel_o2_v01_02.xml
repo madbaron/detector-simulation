@@ -16,7 +16,7 @@
 	</display>
 
 	<detectors>
-		<detector name="ECalBarrel" type="GenericCalBarrel_o1_v01" id="DetID_ECal_Barrel" readout="ECalBarrelCollection" vis="BlueVis" gap="0.*cm">
+		<detector name="ECalBarrel" type="GenericCalBarrel_o1_v01" id="DetID_ECal_Barrel" readout="ECalBarrelCollection" vis="ECALVis" gap="0.*cm">
 
 			<comment>Electromagnetic Calorimeter: Barrel</comment>
 
