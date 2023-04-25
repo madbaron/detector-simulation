@@ -6,7 +6,7 @@
 		url="https://https://mcdwiki.docs.cern.ch/"
 		status="development"
 		version="0">
-		<comment>Variation of 'v1.3.1' geometry with solenoid after tracker</comment>
+		<comment>Variation of 'v1' geometry with solenoid after tracker</comment>
 	</info>
 
 	<define>
