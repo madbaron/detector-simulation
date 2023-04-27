@@ -51,7 +51,7 @@
             </envelope>
             <comment>FMT Detector Endcaps</comment>
 
-            <type_flags type=" DetType_TRACKER + DetType_PIXEL + DetType_ENDCAP"/>
+            <type_flags type="DetType_TRACKER + DetType_PIXEL + DetType_ENDCAP"/>
 
             <module name="SiFMTEndcapModule1_0" vis="SiFMTModuleVis">
                 <trd x1="FMTEndcap_rmin1 * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" x2="FMTEndcap_rmax * tan(pi/(FMTEndcapModules))+FMTEndcapOverlap*sin(pi/FMTEndcapModules)" z="(FMTEndcap_rmax - FMTEndcap_rmin1)/2" />

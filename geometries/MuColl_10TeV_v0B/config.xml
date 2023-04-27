@@ -33,8 +33,8 @@
 		<constant name="DetID_HCAL_Endcap"    value="11"/>
 		<!-- constant name="DetID_HCAL_Ring"      value="12"/ -->
 
-		<constant name="DetID_Yoke_Barrel"    value="12"/>
-		<constant name="DetID_Yoke_Endcap"    value="13"/>
+		<constant name="DetID_Muon_Barrel"    value="12"/>
+		<constant name="DetID_Muon_Endcap"    value="13"/>
 
 		<!-- constant name="DetID_FMT"			  value="14"/ -->
 
@@ -79,28 +79,28 @@
 		<constant name="OuterTracker_half_length"   value="2306*mm"/>
 
 		<constant name="ECalBarrel_inner_radius"    value="1816*mm"/>
-		<constant name="ECalBarrel_outer_radius"    value="2076*mm"/>
-		<constant name="ECalBarrel_half_length"     value="2569*mm"/>
+		<constant name="ECalBarrel_outer_radius"    value="2137*mm"/>
+		<constant name="ECalBarrel_half_length"     value="2628*mm"/>
 		<constant name="ECalBarrel_symmetry"        value="12"/>
 
 		<constant name="ECalEndcap_inner_radius"    value="310*mm"/>
-		<constant name="ECalEndcap_outer_radius"    value="1816*mm - 0.1*mm"/>
+		<constant name="ECalEndcap_outer_radius"    value="1816*mm"/>
 		<constant name="ECalEndcap_min_z"           value="2307*mm"/>
-		<constant name="ECalEndcap_max_z"           value="2569*mm"/>
+		<constant name="ECalEndcap_max_z"           value="2628*mm"/>
 		<constant name="ECalEndcap_outer_symmetry"  value="12"/>
 		<constant name="ECalEndcap_inner_symmetry"  value="12"/>
 
-		<constant name="HCalBarrel_inner_radius"    value="1818*mm"/>
-		<constant name="HCalBarrel_outer_radius"    value="3818*mm"/>
-		<constant name="HCalBarrel_half_length"     value="2569*mm"/>
+		<constant name="HCalBarrel_inner_radius"    value="2137*mm + 0.1*mm"/>
+		<constant name="HCalBarrel_outer_radius"    value="4124.5*mm + 0.1*mm"/>
+		<constant name="HCalBarrel_half_length"     value="2628*mm"/>
 		<constant name="HCalBarrel_symmetry"        value="12"/>
 
 		<constant name="HCalEndcap_inner_steps"     value="5"/>
 		<constant name="HCalEndcap_inner_radius"    value="307*mm"/>
 		<constant name="HCalEndcap_inner_radius2"   value="445*mm"/>
-		<constant name="HCalEndcap_outer_radius"    value="3818*mm"/>
-		<constant name="HCalEndcap_min_z"           value="2570*mm"/>
-		<constant name="HCalEndcap_max_z"           value="4570*mm"/>
+		<constant name="HCalEndcap_outer_radius"    value="4124.5*mm + 0.1*mm"/>
+		<constant name="HCalEndcap_min_z"           value="2628*mm + 0.1*mm"/>
+		<constant name="HCalEndcap_max_z"           value="4615.5*mm + 0.1*mm"/>
 		<constant name="HCalEndcap_symmetry"        value="12"/>
 		<constant name="HCalEndcap_zcutout"         value="200*mm"/>
 
@@ -110,7 +110,7 @@
 
 		<constant name="Solenoid_inner_radius"      value="1500*mm"/>
 		<constant name="Solenoid_outer_radius"      value="1816*mm - 0.1*mm"/>
-		<constant name="Solenoid_half_length"       value="2300*mm"/>
+		<constant name="Solenoid_half_length"       value="2600*mm"/>
 		<constant name="Solenoid_Coil_half_length"  value="2274*mm"/>
 		<constant name="Solenoid_Coil_radius"       value="1658*mm"/>
 
@@ -158,6 +158,8 @@
 		<region name="OuterTrackerBarrelRegion"/>
 		<region name="InnerTrackerEndcapRegion"/>
 		<region name="OuterTrackerEndcapRegion"/>
+		<region name="MuonSystemBarrelRegion" />
+		<region name="MuonSystemEndcapRegion" />
         <region name="FMTEndcapRegion"/>
 	</regions>
 
@@ -170,6 +172,7 @@
 		<vis name="SOLVis"     alpha="1.0" r="0.36"  g="0.78"    b="0.69"  showDaughters="true"  visible="true"/>
 		<vis name="YOKEVis"    alpha="1.0" r="0.88"  g="0.21"    b="0.09"  showDaughters="true"  visible="true"/>
 		<vis name="SupportVis" alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="false" visible="false"/>
+		<vis name="MuonVis"    alpha="1.0" r="0.5"   g="0.48"    b="0.51"  showDaughters="true"  visible="false"/>
         <vis name="FMTVis"     alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="true"  visible="false"/>
 	</display>
 
@@ -181,7 +184,7 @@
 			outer_field="-1.0*tesla"
 			zmax="Solenoid_Coil_half_length"
 			inner_radius="Solenoid_Coil_radius"
-			outer_radius="YokeBarrel_outer_radius">
+			outer_radius="HCalBarrel_outer_radius">
 		</field>
 	</fields>
 
