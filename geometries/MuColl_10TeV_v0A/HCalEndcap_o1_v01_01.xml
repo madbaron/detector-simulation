@@ -1,6 +1,6 @@
 <lccdd>
 	<define>
-		<constant name="HCalEndcap_layers" value="60"/>
+		<constant name="HCalEndcap_layers" value="(int) 75"/>
 		<constant name="HCalEndcap_layer_thickness" value="2.0*cm + 0.65*cm"/>
 		<constant name="HCalRing_layers" value=" floor( (HCalEndcap_min_z - HCalRing_min_z) / HCalEndcap_layer_thickness + 0.5)"/>
 		<constant name="HCalStep_layers" value="HCalEndcap_layers/HCalEndcap_inner_steps"/>
@@ -15,7 +15,7 @@
 						<shape type="BooleanShape" operation="Subtraction">
 							<shape type="BooleanShape" operation="Subtraction">
 								<shape type="PolyhedraRegular"  numsides="HCalEndcap_symmetry" rmin="0" rmax="HCalEndcap_outer_radius+env_safety" dz="2.0*HCalEndcap_max_z+2.0*env_safety"/>
-								<shape type="PolyhedraRegular"  numsides="HCalEndcap_symmetry" rmin="0" rmax="HCalRing_inner_radius-env_safety" dz="2.0*HCalEndcap_min_z-2.0*env_safety"/>
+								<!--shape type="PolyhedraRegular"  numsides="HCalEndcap_symmetry" rmin="0" rmax="HCalRing_inner_radius-env_safety" dz="2.0*HCalEndcap_min_z-2.0*env_safety"/-->
 							</shape>
 							<shape type="PolyhedraRegular"  numsides="HCalEndcap_symmetry" rmin="0" rmax="HCalEndcap_outer_radius+2.0*env_safety" dz="2.0*HCalRing_min_z-2.0*env_safety"/>
 						</shape>
@@ -31,7 +31,7 @@
 
 			<comment>HCalEndcap Assembly</comment>
 			<composite name="HCalEndcap"/>
-			<composite name="HCalRing"/>
+			<!--composite name="HCalRing"/-->
 		</detector>
 	</detectors>
 
@@ -42,10 +42,10 @@
 			<segmentation type="CartesianGridXY" grid_size_x="HCal_cell_size" grid_size_y="HCal_cell_size" />
 			<id>${GlobalCalorimeterReadoutID}</id>
 		</readout>
-		<readout name="HCalRingCollection">
+		<!--readout name="HCalRingCollection">
 			<segmentation type="CartesianGridXY" grid_size_x="HCal_cell_size" grid_size_y="HCal_cell_size" />
 			<id>${GlobalCalorimeterReadoutID}</id>
-		</readout>
+		</readout-->
 	</readouts>
 
 
@@ -121,7 +121,7 @@
 
 
 
-	<detectors>
+	<!-- detectors>
 
 		<detector name="HCalRing" type="GenericCalEndcap_o1_v01" id="DetID_HCAL_Ring" readout="HCalRingCollection" vis="HCALVis" >
 
@@ -149,7 +149,7 @@
 
 		</detector>
 
-	</detectors>
+	</detectors -->
 
 
 
