@@ -31,10 +31,12 @@
 
 		<constant name="DetID_HCAL_Barrel"    value="10"/>
 		<constant name="DetID_HCAL_Endcap"    value="11"/>
-		<!-- constant name="DetID_HCAL_Ring"      value="12"/ -->
 
-		<constant name="DetID_Muon_Barrel"    value="12"/>
-		<constant name="DetID_Muon_Endcap"    value="13"/>
+		<constant name="DetID_Yoke_Barrel"    value="12"/>
+		<constant name="DetID_Yoke_Endcap"    value="13"/>
+
+		<!--constant name="DetID_Muon_Barrel"    value="12"/>
+		<constant name="DetID_Muon_Endcap"    value="13"/-->
 
 		<!-- constant name="DetID_FMT"			  value="14"/ -->
 
@@ -114,16 +116,16 @@
 		<constant name="Solenoid_Coil_half_length"  value="2274*mm"/>
 		<constant name="Solenoid_Coil_radius"       value="1658*mm"/>
 
-		<constant name="YokeBarrel_inner_radius"    value="3818*mm"/>
-		<constant name="YokeBarrel_outer_radius"    value="5777*mm"/>
-		<constant name="YokeBarrel_half_length"     value="4570*mm"/>
+		<constant name="YokeBarrel_inner_radius"    value="4124.6*mm + 0.1*mm"/>
+		<constant name="YokeBarrel_outer_radius"    value="6083.6*mm + 0.1*mm"/>
+		<constant name="YokeBarrel_half_length"     value="4615.6*mm + 0.1*mm"/>
 		<constant name="YokeBarrel_symmetry"        value="12"/>
 
 		<constant name="YokeEndcap_inner_radius"    value="446*mm"/>
 		<constant name="YokeEndcap_inner_radius2"   value="575*mm"/>
-		<constant name="YokeEndcap_outer_radius"    value="5777*mm"/>
-		<constant name="YokeEndcap_min_z"           value="4570*mm"/>
-		<constant name="YokeEndcap_max_z"           value="6529*mm"/>
+		<constant name="YokeEndcap_outer_radius"    value="6083.6*mm + 0.1*mm"/>
+		<constant name="YokeEndcap_min_z"           value="4615.6*mm + 0.1*mm"/>
+		<constant name="YokeEndcap_max_z"           value="6574.6*mm"/>
 		<constant name="YokeEndcap_outer_symmetry"  value="12"/>
 
         <constant name="FMT_inner_radius"        value="3*mm"/>
