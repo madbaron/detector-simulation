@@ -89,6 +89,7 @@
 		<constant name="Nozzle_min_z"          value="6*cm"/>
 		<constant name="Nozzle_max_z"          value="600*cm"/>
 
+        <constant name="Vertex_inner_radius"        value="30*mm"/>
 		<constant name="Vertex_outer_radius"        value="115*mm"/>
 		<constant name="Vertex_half_length"         value="285*mm"/>
 
