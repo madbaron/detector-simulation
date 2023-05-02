@@ -1,12 +1,12 @@
 <lccdd>
      
     <define>
-        <constant name="SolenoidVacuumTank_thickness" value="40*mm"/>
-        <constant name="SolenoidCoil_thickness" value="344*mm"/>        
+        <constant name="SolenoidVacuumTank_thickness" value="25.5*mm"/>
+        <constant name="SolenoidCoil_thickness" value="264.9*mm"/>        
     </define>
     
     
-    
+     
     <display>
         <vis name="SolenoidBarrelLayerVis" alpha="1" r="0"    g="0.3"  b="0.3" showDaughters="false" visible="true"/>
         <vis name="SolenoidCoilEndsVis"    alpha="1" r="0"    g="0.9"  b="0.9" showDaughters="false" visible="true"/>

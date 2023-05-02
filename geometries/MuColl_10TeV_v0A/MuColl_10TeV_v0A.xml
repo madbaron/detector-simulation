@@ -88,8 +88,8 @@
 
 		<constant name="Nozzle_min_z"          value="6*cm"/>
 		<constant name="Nozzle_max_z"          value="600*cm"/>
-
-        <constant name="Vertex_inner_radius"        value="30*mm"/>
+		
+		<constant name="Vertex_inner_radius"        value="30*mm"/>
 		<constant name="Vertex_outer_radius"        value="115*mm"/>
 		<constant name="Vertex_half_length"         value="285*mm"/>
 
@@ -199,9 +199,10 @@
 	<include ref="Nozzle_10deg_v0.xml"/>
 
 	<include ref="Vertex_o2_v06_01.xml"/>
-
 	<include ref="InnerTracker_o2_v06_01.xml"/>
 	<include ref="OuterTracker_o2_v06_01.xml"/>
+
+	<include ref="Solenoid_o1_v01_01.xml"/>
 
 	<include ref="ECalBarrel_o2_v01_02.xml"/>
 	<include ref="ECalEndcap_o2_v01_02.xml"/>
@@ -209,13 +210,11 @@
 	<include ref="HCalBarrel_o1_v01_01.xml"/>
 	<include ref="HCalEndcap_o1_v01_01.xml"/>
 
-	<include ref="Solenoid_o1_v01_01.xml"/>
+    <include ref="YokeBarrel_o1_v01_01.xml"/>
+    <include ref="YokeEndcap_o1_v01_01.xml"/>
 
-	<include ref="YokeBarrel_o1_v01_01.xml"/>
-	<include ref="YokeEndcap_o1_v01_01.xml"/>
-
-	<!-- include ref="MuonSystemBarrel_o1_v00_01.xml"/ -->
-	<!-- include ref="MuonSystemEndcap_o1_v00_01.xml"/ -->
+	<!--include ref="MuonSystemBarrel_o1_v00_01.xml"/-->
+	<!--include ref="MuonSystemEndcap_o1_v00_01.xml"/-->
 
 	<!-- include ref="ForwardMuonTagger_o1_v00_01.xml"/ -->
 
