@@ -23,7 +23,7 @@
 			</envelope>
 
 			<dimensions nsides_inner="ECalEndcap_inner_symmetry" nsides_outer="(int) ECalEndcap_outer_symmetry" zmin="ECalEndcap_min_z" rmin="ECalEndcap_inner_radius" rmax="ECalEndcap_outer_radius"/>
-			<layer repeat="60" vis="ECalLayerVis">
+			<layer repeat="50" vis="ECalLayerVis">
 				<slice material="TungstenDens24" thickness="2.20*mm" radiator="yes" vis="ECalAbsorberVis"/>
 				<slice material="G10"            thickness="0.15*mm" vis="InvisibleNoDaughters"/>
 				<slice material="GroundOrHVMix"  thickness="0.10*mm" vis="ECalAbsorberVis"/>
