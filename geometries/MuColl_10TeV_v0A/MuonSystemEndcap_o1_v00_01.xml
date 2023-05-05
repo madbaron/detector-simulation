@@ -40,7 +40,7 @@
 			</envelope>
 			<comment>Muon System Endcaps</comment>
 
-			<type_flags type="DetType_TRACKER + DetType_ENDCAP"/>
+			<type_flags type=" DetType_CALORIMETER + DetType_MUON + DetType_BARREL"/>
 
             <module name="MuonSystemEndcapModule1_0">
                 <trd x1="MuonEndcap_rmin * tan(pi/(MuonEndcapModules))+MuonEndcapOverlap*sin(pi/MuonEndcapModules)" x2="MuonEndcap_rmax * tan(pi/(MuonEndcapModules))+MuonEndcapOverlap*sin(pi/MuonEndcapModules)" z="(MuonEndcap_rmax - MuonEndcap_rmin)/2" />

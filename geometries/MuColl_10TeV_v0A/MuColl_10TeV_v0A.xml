@@ -39,11 +39,8 @@
 		<constant name="DetID_HCAL_Barrel"    value="10"/>
 		<constant name="DetID_HCAL_Endcap"    value="11"/>
 
-		<constant name="DetID_Yoke_Barrel"    value="12"/>
-		<constant name="DetID_Yoke_Endcap"    value="13"/>
-
-		<!--constant name="DetID_Muon_Barrel"    value="12"/>
-		<constant name="DetID_Muon_Endcap"    value="13"/-->
+        <constant name="DetID_Yoke_Barrel"      value="13"/>
+        <constant name="DetID_Yoke_Endcap"      value="14"/>
 
 		<!-- constant name="DetID_FMT"			  value="14"/ -->
 
@@ -132,9 +129,24 @@
 		<constant name="HCalEndcap_symmetry"        value="12"/>
 		<constant name="HCalEndcap_zcutout"         value="200*mm"/>
 
-        <constant name="FMT_inner_radius"        value="3*mm"/>
-        <constant name="FMT_outer_radius"        value="100*cm"/>
-        <constant name="FMT_half_length"         value="800*cm"/>
+        <constant name="HCalRing_inner_radius"      value="1738*mm"/>
+        <constant name="HCalRing_outer_radius"      value="HCalEndcap_outer_radius"/>
+        <constant name="HCalRing_min_z"             value="2353.5*mm"/>
+        <constant name="HCalRing_max_z"             value="HCalEndcap_min_z"/>
+        <constant name="HCalRing_symmetry"          value="12"/>
+        
+        <constant name="YokeBarrel_inner_radius"    value="4461*mm"/>
+        <constant name="YokeBarrel_outer_radius"    value="6450*mm"/>
+        <constant name="YokeBarrel_half_length"     value="4179*mm"/>
+        <constant name="YokeBarrel_symmetry"        value="12"/>
+
+        <constant name="YokeEndcap_inner_radius"    value="446*mm"/>
+        <constant name="YokeEndcap_inner_radius2"   value="575*mm"/>
+        <constant name="YokeEndcap_outer_radius"    value="6450*mm"/>
+        <constant name="YokeEndcap_min_z"           value="4179*mm"/>
+        <constant name="YokeEndcap_max_z"           value="5638*mm"/>
+        <constant name="YokeEndcap_outer_symmetry"  value="12"/>
+        <constant name="YokeEndcap_inner_symmetry"  value="0"/>
 
 		<constant name="ECal_cell_size"             value="5.1*mm"/>
 		<constant name="HCal_cell_size"             value="3.0*cm"/>
@@ -173,8 +185,6 @@
 		<vis name="SOLVis"     alpha="1.0" r="0.36"  g="0.78"    b="0.69"  showDaughters="true"  visible="true"/>
 		<vis name="YOKEVis"    alpha="1.0" r="0.88"  g="0.21"    b="0.09"  showDaughters="true"  visible="true"/>
 		<vis name="SupportVis" alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="false" visible="false"/>
-		<vis name="MuonVis"    alpha="1.0" r="0.5"   g="0.48"    b="0.51"  showDaughters="true"  visible="false"/>
-        <vis name="FMTVis"     alpha="1.0" r="0.2"   g="0.2"     b="0.2"   showDaughters="true"  visible="false"/>
 	</display>
 
     <include ref="${DD4hepINSTALL}/DDDetectors/compact/detector_types.xml"/>
@@ -196,11 +206,6 @@
 
     <include ref="YokeBarrel_o1_v01_01.xml"/>
     <include ref="YokeEndcap_o1_v01_01.xml"/>
-
-	<!--include ref="MuonSystemBarrel_o1_v00_01.xml"/-->
-	<!--include ref="MuonSystemEndcap_o1_v00_01.xml"/-->
-
-	<!-- include ref="ForwardMuonTagger_o1_v00_01.xml"/ -->
 
     <plugins>
         <plugin name="DD4hepVolumeManager"/>
