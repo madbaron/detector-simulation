@@ -1,0 +1,45 @@
+<lccdd>
+
+      <!--detector id="0" name="BeamPipe" type="ODDCylinder" vis="Beryllium">
+            <beampipe/>
+            <tubs name="BeamPipeCylinder" rmin="bp_rmin" rmax="bp_rmax" dz="bp_length" material="Beryllium">
+              <layer_material surface="representing" binning="binPhi,binZ" bins0="mat_bp_bPhi" bins1="mat_bp_bZ"/>
+            </tubs>
+      </detector-->
+
+
+    <detectors>
+        <comment>Beampipe</comment>
+        
+        <detector id="0" name="BeampipeInner" type="DD4hep_PolyconeSupport" vis="BeampipeInnerVis">
+            <beampipe/>
+            <comment>Inner part of the vacuum beampipe: Beryllium walls</comment>
+            <material name="Vacuum"/>
+            <zplane z="-Nozzle_zmax" rmin="0" rmax="1.78*cm" />
+            <zplane z="-400*cm" rmin="0" rmax="1.19*cm" />
+            <!--zplane z="-200*cm" rmin="0" rmax="0.6*cm" />
+            <zplane z="-100*cm" rmin="0" rmax="0.3*cm" />
+            <zplane z="-15*cm" rmin="0" rmax="0.6*cm" />
+            <zplane z="-6*cm" rmin="0" rmax="1*cm" />
+            <zplane z="6*cm" rmin="0" rmax="1*cm" />
+            <zplane z="15*cm" rmin="0" rmax="0.6*cm" />
+            <zplane z="100*cm" rmin="0" rmax="0.3*cm" />
+            <zplane z="200*cm" rmin="0" rmax="0.6*cm" />
+            <zplane z="400*cm" rmin="0" rmax="1.19*cm" />
+            <zplane z="Nozzle_zmax" rmin="0" rmax="1.78*cm" /-->
+        </detector>
+
+        <detector id="1" name="BeampipeOuter" type="DD4hep_PolyconeSupport" vis="BeampipeOuterVis">
+            <beampipe/>
+            <comment>Outer part of the vacuum beampipe: Beryllium walls</comment>
+            <material name="Vacuum"/>
+            <zplane z="-13.23*cm" rmin="2.281*cm" rmax="2.281*cm" />
+            <zplane z="-6.25*cm" rmin="1.02483*cm" rmax="2.2*cm" />
+            <!--zplane z="-6*cm" rmin="1*cm" rmax="2.2*cm" />
+            <zplane z="6*cm" rmin="1*cm" rmax="2.2*cm" />
+            <zplane z="6.25*cm" rmin="1.02483*cm" rmax="2.2*cm" />
+            <zplane z="13.23*cm" rmin="2.281*cm" rmax="2.281*cm" /-->
+        </detector>
+        
+    </detectors>
+</lccdd>
