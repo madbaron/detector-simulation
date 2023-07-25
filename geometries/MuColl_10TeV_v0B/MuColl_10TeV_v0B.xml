@@ -292,6 +292,15 @@
             zScale      = "1.0"
             bScale      = "1.0"
             coorUnits   = "mm"
+            xMin   = "-7600*mm"
+            xMax   = "+7600*mm"
+            xStep  = "152*mm"  
+            yMin   = "-7600*mm"
+            yMax   = "+7600*mm"
+            yStep  = "152*mm"  
+            zMin   = "-8000*mm"
+            zMax   = "+8000*mm"
+            zStep  = "80*mm"  
             BfieldUnits = "tesla">
         </field>
 	</fields>

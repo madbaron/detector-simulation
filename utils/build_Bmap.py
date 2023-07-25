@@ -28,71 +28,32 @@ def create_and_fill_tree(Bfield, rmin, rmax, halflength, z_endcap_min, r_endcap_
     By = array('f', [0])
     Bz = array('f', [0])
 
-    # x_mm = ROOT.vector('float')()
-    # y_mm = ROOT.vector('float')()
-    # r_mm = ROOT.vector('float')()
-    # z_mm = ROOT.vector('float')()
-    # Bx = ROOT.vector('float')()
-    # By = ROOT.vector('float')()
-    # Bz = ROOT.vector('float')()
-
     # Add branches to the TTree
     tree.Branch('x_mm', x_mm, 'var/F')
     tree.Branch('y_mm', y_mm, 'var/F')
-    # tree.Branch('r_mm', r_mm, 'var/F')
     tree.Branch('z_mm', z_mm, 'var/F')
     tree.Branch('Bx', Bx, 'var/F')
     tree.Branch('By', By, 'var/F')
     tree.Branch('Bz', Bz, 'var/F')
 
-    # Fill the barrel region
     for iz in range(num_points):
         z = (iz * halflength) / num_points
 
-        for ir in range(num_points):
-            radius = rmin + ir * (rmax-rmin) / num_points
+        for ix in range(num_points):
+            x = -rmax + (ix * 2. * rmax) / num_points
 
-            for i in range(num_points):
-                theta = 2 * math.pi * i / num_points
-                x = radius * math.cos(theta)
-                y = radius * math.sin(theta)
+            for iy in range(num_points):
 
-                x_mm[0] = x
-                y_mm[0] = y
-                z_mm[0] = z
-                Bx_val, By_val = calculate_magnetic_field(x, y, Bfield)
-                Bx[0] = Bx_val
-                By[0] = By_val
-                Bz[0] = 0.0
-
-                tree.Fill()
-
-                # symmetrize around z=0
-                x_mm[0] = x
-                y_mm[0] = y
-                z_mm[0] = -z
-                Bx[0] = Bx_val
-                By[0] = By_val
-                Bz[0] = 0.0
-
-                tree.Fill()
-
-    # Fill the endcap region
-    for iz in range(num_points):
-        z = z_endcap_min + iz * (halflength-z_endcap_min) / num_points
-
-        for ir in range(num_points-1):  # avoids overlap at rmin
-            radius = r_endcap_min + ir * (rmin-r_endcap_min) / num_points
-
-            for i in range(num_points):
-                theta = 2 * math.pi * i / num_points
-                x = radius * math.cos(theta)
-                y = radius * math.sin(theta)
+                y = -rmax + (iy * 2. * rmax) / num_points
+                radius = math.sqrt(x*x+y*y)
 
                 x_mm[0] = x
                 y_mm[0] = y
                 z_mm[0] = z
                 Bx_val, By_val = calculate_magnetic_field(x, y, Bfield)
+                if radius < rmin and math.fabs(z) < z_endcap_min:
+                    Bx_val = 0.
+                    By_val = 0.
                 Bx[0] = Bx_val
                 By[0] = By_val
                 Bz[0] = 0.0
