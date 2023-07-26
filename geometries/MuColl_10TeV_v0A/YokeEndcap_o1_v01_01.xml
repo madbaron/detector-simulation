@@ -21,7 +21,7 @@
     <!--  Includes for sensitives and support                -->
     <detectors>
         
-        <detector name="YokeEndcap" type="GenericCalEndcap_o2_v01" id="DetID_Yoke_Endcap" readout="YokeEndcapCollection" vis="YOKEVis" >
+        <detector name="YokeEndcap" type="GenericCalEndcap_o2_v01" id="DetID_Yoke_Endcap" readout="YokeEndcapCollection" vis="YOKEVis" calorimeterType="MUON_ENDCAP" gap="0.*cm" material="Air">
             
             <comment>Encap Yoke</comment>
             
@@ -45,7 +45,7 @@
             
             <dimensions nsides_inner="YokeEndcap_outer_symmetry" nsides_outer="YokeEndcap_outer_symmetry" zmin="YokeEndcap_min_z" rmin="YokeEndcap_inner_radius" rmin2="YokeEndcap_inner_radius2" rmax="YokeEndcap_outer_radius"/>
             <layer repeat="1" vis="YokeEndcapLayerVis" rmin="YokeEndcap_inner_radius+YokeEndcapStep_dr">
-                <slice material="Iron" thickness="19.7*cm"  vis="YokeAbsorberVis" radiator="yes"/>
+                <slice material="Air" thickness="19.7*cm"/>
                 <slice material="Aluminium" thickness="0.1*cm" />
                 <slice material="Air" thickness="0.35*cm" />
                 <slice material="PyrexGlass" thickness="0.2*cm" />
@@ -63,7 +63,7 @@
             </layer>
 
             <layer repeat="1" vis="YokeEndcapLayerVis" rmin="YokeEndcap_inner_radius+YokeEndcapStep_dr*2.0">
-                <slice material="Iron" thickness="19.7*cm"  vis="YokeAbsorberVis" radiator="yes"/>
+                <slice material="Air" thickness="19.7*cm"/>
                 <slice material="Aluminium" thickness="0.1*cm" />
                 <slice material="Air" thickness="0.35*cm" />
                 <slice material="PyrexGlass" thickness="0.2*cm" />
@@ -81,7 +81,7 @@
             </layer>
 
             <layer repeat="1" vis="YokeEndcapLayerVis" rmin="YokeEndcap_inner_radius+YokeEndcapStep_dr*3.0">
-                <slice material="Iron" thickness="19.7*cm"  vis="YokeAbsorberVis" radiator="yes"/>
+                <slice material="Air" thickness="19.7*cm"/>
                 <slice material="Aluminium" thickness="0.1*cm" />
                 <slice material="Air" thickness="0.35*cm" />
                 <slice material="PyrexGlass" thickness="0.2*cm" />
@@ -99,7 +99,7 @@
             </layer>
 
             <layer repeat="1" vis="YokeEndcapLayerVis" rmin="YokeEndcap_inner_radius+YokeEndcapStep_dr*4.0">
-                <slice material="Iron" thickness="19.7*cm"  vis="YokeAbsorberVis" radiator="yes"/>
+                <slice material="Air" thickness="19.7*cm"/>
                 <slice material="Aluminium" thickness="0.1*cm" />
                 <slice material="Air" thickness="0.35*cm" />
                 <slice material="PyrexGlass" thickness="0.2*cm" />
@@ -117,7 +117,7 @@
             </layer>
 
             <layer repeat="1" vis="YokeEndcapLayerVis" rmin="YokeEndcap_inner_radius+YokeEndcapStep_dr*5.0">
-                <slice material="Iron" thickness="19.7*cm"  vis="YokeAbsorberVis" radiator="yes"/>
+                <slice material="Air" thickness="19.7*cm"/>
                 <slice material="Aluminium" thickness="0.1*cm" />
                 <slice material="Air" thickness="0.35*cm" />
                 <slice material="PyrexGlass" thickness="0.2*cm" />
@@ -135,7 +135,7 @@
             </layer>
 
             <layer repeat="1" vis="YokeEndcapLayerVis" rmin="YokeEndcap_inner_radius+YokeEndcapStep_dr*6.0">
-                <slice material="Iron" thickness="19.7*cm"  vis="YokeAbsorberVis" radiator="yes"/>
+                <slice material="Air" thickness="19.7*cm"/>
                 <slice material="Aluminium" thickness="0.1*cm" />
                 <slice material="Air" thickness="0.35*cm" />
                 <slice material="PyrexGlass" thickness="0.2*cm" />
@@ -153,7 +153,7 @@
             </layer>
 
             <layer repeat="1" vis="YokeEndcapLayerVis" rmin="YokeEndcap_inner_radius2">
-                <slice material="Iron" thickness="9.8*cm"  vis="YokeAbsorberVis" radiator="yes"/>
+                <slice material="Air" thickness="9.8*cm"/>
             </layer>
         </detector>
         

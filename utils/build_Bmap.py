@@ -15,7 +15,7 @@ def calculate_magnetic_field(x, y, magnitude):
     return Bx, By
 
 
-def create_and_fill_tree(Bfield, rmin, rmax, halflength, z_endcap_min, r_endcap_min, num_points):
+def create_and_fill_tree(Bfield, rmin, rmax, halflength, z_endcap_min, num_pointsz, num_pointsxy):
     # Create a TTree
     tree = ROOT.TTree("my_magnetic_field_map",
                       "MuColl_10TeV_v0A toroidal magnetic field")
@@ -36,15 +36,15 @@ def create_and_fill_tree(Bfield, rmin, rmax, halflength, z_endcap_min, r_endcap_
     tree.Branch('By', By, 'var/F')
     tree.Branch('Bz', Bz, 'var/F')
 
-    for iz in range(num_points):
-        z = (iz * halflength) / num_points
+    for iz in range(num_pointsz+1):
+        z = -halflength + (iz * 2. * halflength) / num_pointsz
 
-        for ix in range(num_points):
-            x = -rmax + (ix * 2. * rmax) / num_points
+        for ix in range(num_pointsxy+1):
+            x = -rmax + (ix * 2. * rmax) / num_pointsxy
 
-            for iy in range(num_points):
+            for iy in range(num_pointsxy+1):
 
-                y = -rmax + (iy * 2. * rmax) / num_points
+                y = -rmax + (iy * 2. * rmax) / num_pointsxy
                 radius = math.sqrt(x*x+y*y)
 
                 x_mm[0] = x
@@ -54,16 +54,6 @@ def create_and_fill_tree(Bfield, rmin, rmax, halflength, z_endcap_min, r_endcap_
                 if radius < rmin and math.fabs(z) < z_endcap_min:
                     Bx_val = 0.
                     By_val = 0.
-                Bx[0] = Bx_val
-                By[0] = By_val
-                Bz[0] = 0.0
-
-                tree.Fill()
-
-                # symmetrize around z=0
-                x_mm[0] = x
-                y_mm[0] = y
-                z_mm[0] = -z
                 Bx[0] = Bx_val
                 By[0] = By_val
                 Bz[0] = 0.0
@@ -80,12 +70,13 @@ if __name__ == "__main__":
     halflength = 8000  # Chosen halflength [mm]
     z_endcap_min = 4570  # End of HCal [mm]
     r_endcap_min = 445  # End of nozzle [mm]
-    num_points = 100  # Number of points to create (same for x,y,z)
+    num_pointsz = 100  # Number of points to create on z
+    num_pointsxy = 200  # Number of points to create (same for x,y)
     Bfield = 5  # [T]
 
     # Create and fill the TTree
     tree = create_and_fill_tree(
-        Bfield, rmin, rmax, halflength, z_endcap_min, r_endcap_min, num_points)
+        Bfield, rmin, rmax, halflength, z_endcap_min, num_pointsz, num_pointsxy)
 
     # Create a ROOT file to store the TTree
     output_file = ROOT.TFile("cylindrical_surface_data.root", "RECREATE")
