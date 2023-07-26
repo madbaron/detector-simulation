@@ -39,6 +39,8 @@ def create_and_fill_tree(Bfield, rmin, rmax, halflength, z_endcap_min, num_point
     for iz in range(num_pointsz+1):
         z = -halflength + (iz * 2. * halflength) / num_pointsz
 
+        print("z = ", z)
+
         for ix in range(num_pointsxy+1):
             x = -rmax + (ix * 2. * rmax) / num_pointsxy
 
@@ -65,13 +67,12 @@ def create_and_fill_tree(Bfield, rmin, rmax, halflength, z_endcap_min, num_point
 
 if __name__ == "__main__":
     # Set the parameters for the cylindrical surface
-    rmin = 4100  # min radius [mm]
-    rmax = 7600  # max radius [mm]
-    halflength = 8000  # Chosen halflength [mm]
+    rmin = 4090  # min radius [mm]
+    rmax = 6100  # max radius [mm]
+    halflength = 6398  # Chosen halflength [mm]
     z_endcap_min = 4570  # End of HCal [mm]
-    r_endcap_min = 445  # End of nozzle [mm]
-    num_pointsz = 100  # Number of points to create on z
-    num_pointsxy = 200  # Number of points to create (same for x,y)
+    num_pointsz = 28  # Number of points to create on z
+    num_pointsxy = 500  # Number of points to create (same for x,y)
     Bfield = 5  # [T]
 
     # Create and fill the TTree

@@ -135,14 +135,14 @@
         <constant name="HCalRing_max_z"             value="HCalEndcap_min_z"/>
         <constant name="HCalRing_symmetry"          value="12"/>
         
-        <constant name="YokeBarrel_inner_radius"    value="4026.0*mm + 0.1*mm"/>
-        <constant name="YokeBarrel_outer_radius"    value="6015*mm"/>
+        <constant name="YokeBarrel_inner_radius"    value="4100*mm"/>
+        <constant name="YokeBarrel_outer_radius"    value="6089*mm"/>
         <constant name="YokeBarrel_half_length"     value="4562*mm + 0.1*mm"/>
         <constant name="YokeBarrel_symmetry"        value="12"/>
 
         <constant name="YokeEndcap_inner_radius"    value="446*mm"/>
         <constant name="YokeEndcap_inner_radius2"   value="575*mm"/>
-        <constant name="YokeEndcap_outer_radius"    value="6015*mm"/>
+        <constant name="YokeEndcap_outer_radius"    value="6089*mm"/>
         <constant name="YokeEndcap_min_z"           value="4562*mm + 0.1*mm"/>
         <constant name="YokeEndcap_max_z"           value="6021*mm"/>
         <constant name="YokeEndcap_outer_symmetry"  value="12"/>
@@ -288,18 +288,18 @@
             zScale      = "1.0"
             bScale      = "1.0"
             coorUnits   = "mm"
-            nX = "201"
-            nY = "201"
-            nZ = "101"
-            xMin   = "-7600*mm"
-            xMax   = "+7600*mm"
-            xStep  = "76*mm"  
-            yMin   = "-7600*mm"
-            yMax   = "+7600*mm"
-            yStep  = "76ß*mm"  
-            zMin   = "-8000*mm"
-            zMax   = "+8000*mm"
-            zStep  = "160*mm"  
+            nX = "501"
+            nY = "501"
+            nZ = "29"
+            xMin   = "-6100*mm"
+            xMax   = "+6100*mm"
+            xStep  = "24.4*mm"  
+            yMin   = "-6100*mm"
+            yMax   = "+6100*mm"
+            yStep  = "24.4*mm"  
+            zMin   = "-6398*mm"
+            zMax   = "+6398*mm"
+            zStep  = "457*mm"  
             BfieldUnits = "tesla">
         </field>
     </fields>
