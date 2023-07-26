@@ -275,7 +275,7 @@
 		</field>
         
         <field name="Toroids" type="FieldXYZ"
-            filename    = "/data/detector-simulation/geometries/MuColl_10TeV_v0A/cylindrical_surface_data.root"
+            filename    = "/opt/detector-simulation/geometries/MuColl_10TeV_v0A/cylindrical_surface_data.root"
             treeName    = "my_magnetic_field_map"
             xVarName    = "x_mm"
             yVarName    = "y_mm"
