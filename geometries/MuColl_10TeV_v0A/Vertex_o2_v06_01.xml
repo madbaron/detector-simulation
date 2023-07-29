@@ -100,29 +100,17 @@
                 <ladder    distance="VertexBarrel_r2" thickness="VertexBarrel_Support_Thickness" width="VertexBarrel_Layer2_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer2_offset"    material="Silicon" vis="SiVertexPassiveVis" />
                 <sensitive nmodules="VertexBarrel_nmodules" distance="VertexBarrel_r2+VertexBarrel_Support_Thickness" thickness="VertexBarrel_Sensitive_Thickness" width="VertexBarrel_Layer2_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer2_offset" material="Silicon" vis="SiVertexSensitiveVis"/>
             </layer>
-            <layer nLadders="VertexBarrel_Layer2_Staves" phi0="0" id="3">
-                <sensitive nmodules="VertexBarrel_nmodules" distance="VertexBarrel_r2+VertexBarrel_Support_Thickness+VertexBarrel_Sensitive_Thickness+VertexBarrel_DoubleLayer_Gap" thickness="VertexBarrel_Sensitive_Thickness" width="VertexBarrel_Layer2_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer2_offset" material="Silicon" vis="SiVertexSensitiveVis"/>
-                <ladder    distance="VertexBarrel_r2+VertexBarrel_Support_Thickness+VertexBarrel_Sensitive_Thickness+VertexBarrel_DoubleLayer_Gap+VertexBarrel_Sensitive_Thickness" thickness="VertexBarrel_Support_Thickness" width="VertexBarrel_Layer2_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer2_offset"    material="Silicon" vis="SiVertexPassiveVis" />
-            </layer>
 
 
             <layer nLadders="VertexBarrel_Layer3_Staves" phi0="0" id="4">
                 <ladder    distance="VertexBarrel_r3" thickness="VertexBarrel_Support_Thickness" width="VertexBarrel_Layer3_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer3_offset"    material="Silicon" vis="SiVertexPassiveVis" />
                 <sensitive nmodules="VertexBarrel_nmodules" distance="VertexBarrel_r3+VertexBarrel_Support_Thickness" thickness="VertexBarrel_Sensitive_Thickness" width="VertexBarrel_Layer3_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer3_offset" material="Silicon" vis="SiVertexSensitiveVis"/>
             </layer>
-            <layer nLadders="VertexBarrel_Layer3_Staves" phi0="0" id="5">
-                <sensitive nmodules="VertexBarrel_nmodules" distance="VertexBarrel_r3+VertexBarrel_Support_Thickness+VertexBarrel_Sensitive_Thickness+VertexBarrel_DoubleLayer_Gap" thickness="VertexBarrel_Sensitive_Thickness" width="VertexBarrel_Layer3_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer3_offset" material="Silicon" vis="SiVertexSensitiveVis"/>
-                <ladder    distance="VertexBarrel_r3+VertexBarrel_Support_Thickness+VertexBarrel_Sensitive_Thickness+VertexBarrel_DoubleLayer_Gap+VertexBarrel_Sensitive_Thickness" thickness="VertexBarrel_Support_Thickness" width="VertexBarrel_Layer3_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer3_offset"    material="Silicon" vis="SiVertexPassiveVis"/>
-            </layer>
 
 
             <layer nLadders="VertexBarrel_Layer4_Staves" phi0="0" id="6">
                 <ladder    distance="VertexBarrel_r4" thickness="VertexBarrel_Support_Thickness" width="VertexBarrel_Layer4_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer4_offset"    material="Silicon" vis="SiVertexPassiveVis" />
                 <sensitive nmodules="VertexBarrel_nmodules" distance="VertexBarrel_r4+VertexBarrel_Support_Thickness" thickness="VertexBarrel_Sensitive_Thickness" width="VertexBarrel_Layer4_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer4_offset" material="Silicon" vis="SiVertexSensitiveVis"/>
-            </layer>
-            <layer nLadders="VertexBarrel_Layer4_Staves" phi0="0" id="7">
-                <sensitive nmodules="VertexBarrel_nmodules" distance="VertexBarrel_r4+VertexBarrel_Support_Thickness+VertexBarrel_Sensitive_Thickness+VertexBarrel_DoubleLayer_Gap" thickness="VertexBarrel_Sensitive_Thickness" width="VertexBarrel_Layer4_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer4_offset" material="Silicon" vis="SiVertexSensitiveVis"/>
-                <ladder    distance="VertexBarrel_r4+VertexBarrel_Support_Thickness+VertexBarrel_Sensitive_Thickness+VertexBarrel_DoubleLayer_Gap+VertexBarrel_Sensitive_Thickness" thickness="VertexBarrel_Support_Thickness" width="VertexBarrel_Layer4_width" length="VertexBarrel_zmax" offset="VertexBarrel_Layer4_offset"    material="Silicon" vis="SiVertexPassiveVis"/>
             </layer>
 
         </detector>

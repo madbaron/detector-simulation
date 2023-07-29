@@ -136,13 +136,13 @@
         <constant name="HCalRing_symmetry"          value="12"/>
         
         <constant name="YokeBarrel_inner_radius"    value="4100*mm"/>
-        <constant name="YokeBarrel_outer_radius"    value="6089*mm"/>
+        <constant name="YokeBarrel_outer_radius"    value="7100*mm"/>
         <constant name="YokeBarrel_half_length"     value="4562*mm + 0.1*mm"/>
         <constant name="YokeBarrel_symmetry"        value="12"/>
 
         <constant name="YokeEndcap_inner_radius"    value="446*mm"/>
         <constant name="YokeEndcap_inner_radius2"   value="575*mm"/>
-        <constant name="YokeEndcap_outer_radius"    value="6089*mm"/>
+        <constant name="YokeEndcap_outer_radius"    value="7100*mm"/>
         <constant name="YokeEndcap_min_z"           value="4562*mm + 0.1*mm"/>
         <constant name="YokeEndcap_max_z"           value="6021*mm"/>
         <constant name="YokeEndcap_outer_symmetry"  value="12"/>
@@ -274,34 +274,29 @@
 			outer_radius="HCalBarrel_outer_radius">
 		</field>
         
-        <field name="Toroids" type="FieldXYZ"
-            filename    = "/opt/detector-simulation/geometries/MuColl_10TeV_v0A/cylindrical_surface_data.root"
-            treeName    = "my_magnetic_field_map"
-            xVarName    = "x_mm"
-            yVarName    = "y_mm"
-            zVarName    = "z_mm"
-            BxVarName   = "Bx"
-            ByVarName   = "By"
-            BzVarName   = "Bz"
-            xScale      = "1.0"
-            yScale      = "1.0"
-            zScale      = "1.0"
-            bScale      = "1.0"
-            coorUnits   = "mm"
-            nX = "501"
-            nY = "501"
-            nZ = "29"
-            xMin   = "-6100*mm"
-            xMax   = "+6100*mm"
-            xStep  = "24.4*mm"  
-            yMin   = "-6100*mm"
-            yMax   = "+6100*mm"
-            yStep  = "24.4*mm"  
-            zMin   = "-6398*mm"
-            zMax   = "+6398*mm"
-            zStep  = "457*mm"  
-            BfieldUnits = "tesla">
-        </field>
+        <field name="BarrelToroid" type="toroid"
+			inner_field="5.0*tesla"
+			zmin="-4562*mm - 0.1*mm"
+			zmax="+4562*mm + 0.1*mm"
+			inner_radius="4090*mm"
+			outer_radius="6100*mm">
+		</field>
+
+        <field name="EndCapLToroid" type="toroid"
+			inner_field="5.0*tesla"
+			zmin="-6400*mm"
+			zmax="-4562*mm - 0.1*mm"
+			inner_radius="446*mm"
+			outer_radius="6100*mm">
+		</field>
+
+        <field name="EndCapRToroid" type="toroid"
+			inner_field="5.0*tesla"
+			zmin="4562*mm + 0.1*mm"
+			zmax="+6400*mm"
+			inner_radius="446*mm"
+			outer_radius="6100*mm">
+		</field>
     </fields>
 
 </lccdd>
