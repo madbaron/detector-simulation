@@ -171,7 +171,7 @@ for iF, file_in in enumerate(args.files_in):
 		particle.setTime(t)
 		particle.setMass(mass)
 		particle.setCharge(charge)
-		pos = np.array([x, y, z], dtype=np.float64)
+		pos = np.array([x*10, y*10, z*10], dtype=np.float64) # FLUKA positions are in cm!
 
 		if args.invert_z:
 			pos[2] = -pos[2]
