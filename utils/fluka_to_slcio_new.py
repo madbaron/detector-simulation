@@ -222,8 +222,8 @@ for iF, file_in in enumerate(args.files_in):
                 dPhi = random.random() * math.pi * 2
                 co = math.cos(dPhi)
                 si = math.sin(dPhi)
-                pos[0] = co * x - si * y
-                pos[1] = si * x + co * y
+                pos[0] = co * x*10 - si * y*10
+                pos[1] = si * x*10 + co * y*10
                 mom[0] = co * px - si * py
                 mom[1] = si * px + co * py
             p.setVertex(pos)
