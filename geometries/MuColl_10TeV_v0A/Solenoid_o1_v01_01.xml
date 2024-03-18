@@ -1,8 +1,8 @@
 <lccdd>
      
     <define>
-        <constant name="SolenoidVacuumTank_thickness" value="3.*mm"/>
-        <constant name="SolenoidCoil_thickness" value="264.9*mm"/>        
+        <constant name="SolenoidVacuumTank_thickness" value="30.*mm"/>
+        <constant name="SolenoidCoil_thickness" value="296.7*mm"/>        
     </define>
      
     <display>
@@ -33,19 +33,19 @@
             </envelope>
             
             <layer id="1" inner_r="Solenoid_inner_radius" outer_z="Solenoid_half_length" vis="SolenoidBarrelLayerVis">
-                <slice material="Steel235" thickness="SolenoidVacuumTank_thickness"/>
+                <slice material="Aluminium" thickness="SolenoidVacuumTank_thickness"/>
             </layer>
             <layer id="2" inner_r="Solenoid_Coil_radius-SolenoidCoil_thickness/2.0" outer_z="Solenoid_Coil_half_length">
                 <slice material="Aluminium" thickness="SolenoidCoil_thickness" vis="SolenoidCoilEndsVis" />
             </layer>
             <layer id="3" inner_r="Solenoid_outer_radius-SolenoidVacuumTank_thickness" outer_z="Solenoid_half_length" vis="SolenoidBarrelLayerVis">
-                <slice material="Steel235" thickness="SolenoidVacuumTank_thickness"/>
+                <slice material="Aluminium" thickness="SolenoidVacuumTank_thickness"/>
             </layer>
         </detector>
         
         <detector name="SolenoidEndcaps" type="DD4hep_DiskTracker" id="0" reflect="true" vis="SolenoidBarrelLayerVis">
             <layer id="1" inner_r="Solenoid_inner_radius+SolenoidVacuumTank_thickness" inner_z="Solenoid_half_length-SolenoidVacuumTank_thickness" outer_r="Solenoid_outer_radius-SolenoidVacuumTank_thickness" vis="SolenoidBarrelLayerVis">
-	        <slice material="Steel235" thickness="SolenoidVacuumTank_thickness/2.0" />
+	        <slice material="Aluminium" thickness="SolenoidVacuumTank_thickness/2.0" />
           </layer>
         </detector>
     </detectors>
