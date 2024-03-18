@@ -22,7 +22,7 @@ parser.add_argument('file_out', metavar='FILE_OUT.slcio',
 parser.add_argument('-c', '--comment', metavar='TEXT',
                     help='Comment to be added to the header', type=str)
 parser.add_argument('-b', '--bx_time', metavar='TIME',
-                    help='Time of the bunch crossing [ns]', type=float, default=687.67366975809892)
+                    help='Time of the bunch crossing [ns]', type=float, default=0.)
 parser.add_argument('-n', '--normalization', metavar='N',
                     help='Normalization of the generated sample', type=float, default=1.0)
 parser.add_argument('-f', '--files_event', metavar='L',
@@ -58,6 +58,7 @@ def bytes_from_file(filename):
 
 
 # Binary format of a single entry
+'''
 line_dt = np.dtype([
     ('fid',  np.int32),
     ('fid_mo',  np.int32),
@@ -79,6 +80,22 @@ line_dt = np.dtype([
     ('py_mo', np.float64),
     ('pz_mo', np.float64),
     ('age_mo', np.float64)
+])
+'''
+line_dt=np.dtype([
+    ('fid',  np.int32),
+    ('fid_mo',  np.int32),
+    ('E', np.float64),
+    ('x', np.float64),
+    ('y', np.float64),
+    ('z', np.float64),
+    ('cx', np.float64),
+    ('cy', np.float64),
+    ('cz', np.float64),
+    ('time', np.float64),
+    ('x_mu', np.float64),
+    ('y_mu', np.float64),
+    ('z_mu', np.float64),
 ])
 
 # Start of the processing
@@ -134,7 +151,8 @@ for iF, file_in in enumerate(args.files_in):
             break
 
         # Extracting relevant values from the line
-        fid, e, x, y, z, cx, cy, cz, time = (data[n][0] for n in [
+        #fid, e, x, y, z, cx, cy, cz, time = (data[n][0] for n in [
+        fid,e_kin, x,y,z, cx,cy,cz, time = (data[n][0] for n in [
             'fid', 'E',
             'x', 'y', 'z',
             'cx', 'cy', 'cz', 'time'
@@ -155,11 +173,12 @@ for iF, file_in in enumerate(args.files_in):
             continue
 
         # Calculating the components of the momentum vector
-        mom = np.array([cx, cy, cz], dtype=np.float32)
-        mom *= e
+        #mom = np.array([cx, cy, cz], dtype=np.float32)
+        #mom *= e
 
         # Skipping if it's a neutron with too low kinetic energy
-        if args.ne_min is not None and abs(pdg) == 2112 and np.linalg.norm(mom) < args.ne_min:
+        # if args.ne_min is not None and abs(pdg) == 2112 and np.linalg.norm(mom) < args.ne_min:
+        if args.ne_min is not None and abs(pdg) == 2112 and e_kin < args.ne_min:
             continue
 
         # Getting the charge and mass of the particle
@@ -169,6 +188,11 @@ for iF, file_in in enumerate(args.files_in):
             print('         Skpping the particle...')
             continue
         charge, mass = PDG_PROPS[pdg]
+
+		# Calculating the components of the momentum vector from the kinetic energy
+        mom_tot = sqrt(e_kin**2 + 2 * e_kin * mass)
+        mom = np.array([cx, cy, cz], dtype=np.float32)
+        mom *= mom_tot
 
         # Calculating how many random copies of the particle to create according to the weight
         nP_frac, nP = math.modf(args.normalization)
@@ -183,7 +207,7 @@ for iF, file_in in enumerate(args.files_in):
         particle.setTime(t)
         particle.setMass(mass)
         particle.setCharge(charge)
-        pos = np.array([x, y, z], dtype=np.float64)
+        pos = np.array([x*10, y*10, z*10], dtype=np.float64)
 
         if args.invert_z:
             pos[2] = -pos[2]
@@ -198,8 +222,8 @@ for iF, file_in in enumerate(args.files_in):
                 dPhi = random.random() * math.pi * 2
                 co = math.cos(dPhi)
                 si = math.sin(dPhi)
-                pos[0] = co * x - si * y
-                pos[1] = si * x + co * y
+                pos[0] = co * x*10 - si * y*10
+                pos[1] = si * x*10 + co * y*10
                 mom[0] = co * px - si * py
                 mom[1] = si * px + co * py
             p.setVertex(pos)

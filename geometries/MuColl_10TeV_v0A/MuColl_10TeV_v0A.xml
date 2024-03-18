@@ -129,11 +129,11 @@
 		<constant name="HCalEndcap_symmetry"        value="12"/>
 		<constant name="HCalEndcap_zcutout"         value="200*mm"/>
 
-        <!--constant name="HCalRing_inner_radius"      value="1738*mm"/>
+        <constant name="HCalRing_inner_radius"      value="1738*mm"/>
         <constant name="HCalRing_outer_radius"      value="HCalEndcap_outer_radius"/>
         <constant name="HCalRing_min_z"             value="2353.5*mm"/>
         <constant name="HCalRing_max_z"             value="HCalEndcap_min_z"/>
-        <constant name="HCalRing_symmetry"          value="12"/-->
+        <constant name="HCalRing_symmetry"          value="12"/>
         
         <constant name="YokeBarrel_inner_radius"    value="4150*mm"/>
         <constant name="YokeBarrel_outer_radius"    value="7150*mm"/>
@@ -272,30 +272,6 @@
 			zmax="Solenoid_Coil_half_length"
 			inner_radius="Solenoid_Coil_radius"
 			outer_radius="HCalBarrel_outer_radius">
-		</field>
-        
-        <field name="BarrelToroid" type="toroid"
-			inner_field="5.0*tesla"
-			zmin="-4562*mm - 0.1*mm"
-			zmax="+4562*mm + 0.1*mm"
-			inner_radius="4090*mm"
-			outer_radius="6100*mm">
-		</field>
-
-        <field name="EndCapLToroid" type="toroid"
-			inner_field="5.0*tesla"
-			zmin="-6400*mm"
-			zmax="-4562*mm - 0.1*mm"
-			inner_radius="446*mm"
-			outer_radius="6100*mm">
-		</field>
-
-        <field name="EndCapRToroid" type="toroid"
-			inner_field="5.0*tesla"
-			zmin="4562*mm + 0.1*mm"
-			zmax="+6400*mm"
-			inner_radius="446*mm"
-			outer_radius="6100*mm">
 		</field>
     </fields>
 
