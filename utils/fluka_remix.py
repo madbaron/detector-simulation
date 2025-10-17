@@ -158,8 +158,6 @@ for iF, file_in in enumerate(args.files_in):
         mom_tot = sqrt(e_kin**2 + 2 * e_kin * mass)
         mom = np.array([cx, cy, cz], dtype=np.float32)
         mom *= mom_tot
-
-        pos = np.array([x, y, z], dtype=np.float64)
         px, py, pz = mom
 
         my_particle = [pdg, t, mass, charge, px, py, pz, x, y, z, z_mu]
@@ -219,6 +217,9 @@ for iF, file_in in enumerate(args.files_in):
                     particle.setMass(mass)
                     particle.setCharge(charge)
                     pos = np.array([x*10, y*10, z*10], dtype=np.float64)
+
+					# Updating mom vector
+                    mom = np.array([px, py, pz], dtype=np.float32)
 
                     if args.invert_z:
                         pos[2] = -pos[2]
